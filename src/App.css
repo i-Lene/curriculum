@@ -1,0 +1,23 @@
+body {
+    font-family: 'General Sans', sans-serif;
+    font-weight: 400;
+  }
+  
+  h1, h2 {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 500;
+  }
+  
+  .subheading {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 400;
+  }
+  
+  .light-text {
+    font-weight: 300;
+  }
+  
+  .extra-light {
+    font-weight: 200;
+  }
+  
