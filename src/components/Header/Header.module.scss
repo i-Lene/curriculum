@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  .logo {
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+  }
+
+  ul {
+    padding: 0;
+    display: flex;
+    gap: 16px;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .gitHubLink {
+    a {
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+  }
+}

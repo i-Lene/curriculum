@@ -9,7 +9,7 @@ export default function HeaderLink({ path, name, icon }) {
         color: isActive ? "pink" : "red",
       })}
     >
-      <span className="icon">{icon}</span>
+      {icon && <span className="icon">{icon}</span>}
       {name}
     </NavLink>
   );
