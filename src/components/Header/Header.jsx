@@ -8,11 +8,9 @@ import { Link } from "react-router";
 export default function Header() {
   const burgerDropdownRef = useRef(null);
 
-  const burgerDropdown = document.querySelector(`.${classes.burgerDropdown}`);
-
   function toggleBurgerMenu() {
-    if (burgerDropdown) {
-      burgerDropdown.classList.toggle(classes.active);
+    if (burgerDropdownRef.current) {
+      burgerDropdownRef.current.classList.toggle(classes.active);
     }
   }
 
