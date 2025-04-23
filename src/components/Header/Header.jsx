@@ -1,26 +1,39 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import HeaderLink from "./HeaderLink";
 import classes from "./Header.module.scss";
+import HeaderLinks from "./HeaderLinks";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { useRef } from "react";
+import { Link } from "react-router";
 
 export default function Header() {
+  const burgerDropdownRef = useRef(null);
+
+  const burgerDropdown = document.querySelector(`.${classes.burgerDropdown}`);
+
+  function toggleBurgerMenu() {
+    if (burgerDropdown) {
+      burgerDropdown.classList.toggle(classes.active);
+    }
+  }
+
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>
+      <Link className={classes.logo} to={"/"}>
         <h1>Marlene.</h1>
+      </Link>
+      <div className={classes.headerLinksDesktop}>
+        <HeaderLinks />
       </div>
-      <nav>
-        <ul>
-          <HeaderLink path="/" name="Home" />
-          <HeaderLink path="/about" name="About" />
-          <HeaderLink path="/portfolio" name="Portfolio" />
-          <HeaderLink path="/contact" name="Contact" />
-        </ul>
-      </nav>
-      <div className={classes.gitHubLink}>
-        <a href="https://github.com/i-Lene/curriculum" target="_blank">
-          {<FontAwesomeIcon icon={faGithub} />}
-        </a>
+      <div className={classes.headerLinksMobile}>
+        <div className={classes.burger}>
+          <button className={classes.burgerIcon} onClick={toggleBurgerMenu}>
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+
+          <div className={classes.burgerDropdown} ref={burgerDropdownRef}>
+            <HeaderLinks />
+          </div>
+        </div>
       </div>
     </header>
   );

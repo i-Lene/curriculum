@@ -1,23 +1,41 @@
+$layout-breakpoint-medium: 1025px;
+$layout-breakpoint-small: 768px;
+
+$padding--desktop: 20px 60px;
+$padding--mobile: 20px 20px;
+
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  padding: $padding--desktop;
 
   .logo {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
     h1 {
       margin: 0;
       font-size: 2.5rem;
     }
   }
 
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
   ul {
     padding: 0;
+    margin: 0;
     display: flex;
-    gap: 16px;
+    gap: 36px;
 
-    a {
+    .headerLink {
       text-decoration: none;
+      padding: 10px;
 
       &:hover {
         text-decoration: underline;
@@ -27,8 +45,59 @@
 
   .gitHubLink {
     a {
+      padding: 10px;
       font-size: 1.5rem;
       text-decoration: none;
     }
+  }
+}
+
+.headerLinksMobile {
+  display: none;
+}
+
+.burger {
+  .burgerIcon {
+    font-size: 30px;
+  }
+
+  .burgerDropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: white;
+    padding: $padding--mobile;
+
+    &.active {
+      display: block;
+    }
+    .navbar {
+      flex-direction: column;
+      gap: 16px;
+      ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 16px;
+      }
+
+      .gitHubLink {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $layout-breakpoint-medium) {
+  .header {
+    padding: $padding--mobile;
+  }
+  .headerLinksMobile {
+    display: block;
+  }
+
+  .headerLinksDesktop {
+    display: none;
   }
 }
