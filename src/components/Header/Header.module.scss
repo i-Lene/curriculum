@@ -51,7 +51,25 @@
 
 .burger {
   .burgerIcon {
-    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+
+    .bar {
+      width: 40px;
+      max-width: 100%;
+      background: $color__text;
+      height: 4px;
+      display: block;
+      margin-bottom: 0;
+      border-radius: 2px;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
   }
 
   .burgerDropdown {

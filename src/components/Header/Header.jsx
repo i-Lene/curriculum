@@ -1,15 +1,13 @@
 import classes from "./Header.module.scss";
 import HeaderLinks from "./HeaderLinks";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { Link } from "react-router";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const dropDownAnimationClose = { opacity: 0, y: -20 };
+  const dropDownAnimationClose = { opacity: 0, y: -6 };
   const dropDownAnimationOpen = { opacity: 1, y: 25 };
 
   function toggleBurgerMenu() {
@@ -26,9 +24,37 @@ export default function Header() {
       </div>
       <div className={classes.headerLinksMobile}>
         <div className={classes.burger}>
-          <button className={classes.burgerIcon} onClick={toggleBurgerMenu}>
-            <FontAwesomeIcon icon={faBars} />
-          </button>
+          <motion.button
+            className={classes.burgerIcon}
+            onClick={toggleBurgerMenu}
+            initial={false}
+            animate={isDropdownOpen ? "open" : "closed"}
+          >
+            <motion.span
+              className={classes.bar}
+              variants={{
+                open: { rotate: 45, y: 16 },
+                closed: { rotate: 0, y: 0 },
+              }}
+              transition={{ duration: 0.3 }}
+            />
+            <motion.span
+              className={classes.bar}
+              variants={{
+                open: { opacity: 0 },
+                closed: { opacity: 1 },
+              }}
+              transition={{ duration: 0.3 }}
+            />
+            <motion.span
+              className={classes.bar}
+              variants={{
+                open: { rotate: -45, y: -8 },
+                closed: { rotate: 0, y: 0 },
+              }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.button>
 
           <motion.div
             className={classes.burgerDropdown}
