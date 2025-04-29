@@ -2,16 +2,18 @@ import classes from "./Header.module.scss";
 import HeaderLinks from "./HeaderLinks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router";
+import { motion } from "motion/react";
 
 export default function Header() {
-  const burgerDropdownRef = useRef(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const dropDownAnimationClose = { opacity: 0, y: -20 };
+  const dropDownAnimationOpen = { opacity: 1, y: 25 };
 
   function toggleBurgerMenu() {
-    if (burgerDropdownRef.current) {
-      burgerDropdownRef.current.classList.toggle(classes.active);
-    }
+    setIsDropdownOpen((prev) => !prev);
   }
 
   return (
@@ -28,9 +30,16 @@ export default function Header() {
             <FontAwesomeIcon icon={faBars} />
           </button>
 
-          <div className={classes.burgerDropdown} ref={burgerDropdownRef}>
+          <motion.div
+            className={classes.burgerDropdown}
+            initial={dropDownAnimationClose}
+            animate={
+              isDropdownOpen ? dropDownAnimationOpen : dropDownAnimationClose
+            }
+            transition={{ duration: 0.3 }}
+          >
             <HeaderLinks />
-          </div>
+          </motion.div>
         </div>
       </div>
     </header>

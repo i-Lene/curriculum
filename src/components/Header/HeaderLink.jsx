@@ -1,17 +1,34 @@
 import { NavLink } from "react-router";
 import classes from "./Header.module.scss";
+import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 export default function HeaderLink({ path, name, icon }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 1025);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  const motionProps = isMobile
+    ? {}
+    : { whileHover: { scale: 1.1 }, whileTap: { scale: 0.95 } };
+
   return (
-    <NavLink
-      to={path}
-      className={classes.headerLink}
-      style={({ isActive }) => ({
-        color: isActive ? "pink" : "red",
-      })}
-    >
-      {icon && <span className="icon">{icon}</span>}
-      {name}
-    </NavLink>
+    <motion.div style={{ transformOrigin: "center" }} {...motionProps}>
+      <NavLink
+        to={path}
+        className={classes.headerLink}
+        style={({ isActive }) => ({
+          color: isActive ? "#d4a5a5" : "#5c4b4b",
+        })}
+      >
+        {icon && <span className="icon">{icon}</span>}
+        {name}
+      </NavLink>
+    </motion.div>
   );
 }

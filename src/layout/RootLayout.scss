@@ -1,0 +1,25 @@
+@import "../utilities/variables.scss";
+
+body {
+  background-color: $color__primary;
+}
+
+h1 {
+  color: $color__secondary;
+}
+
+p,
+a,
+span {
+  color: $color__text;
+}
+
+main {
+  padding: $padding--desktop;
+}
+
+@media only screen and (max-width: $layout-breakpoint-medium) {
+  main {
+    padding: $padding--mobile;
+  }
+}

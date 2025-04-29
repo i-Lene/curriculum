@@ -1,8 +1,4 @@
-$layout-breakpoint-medium: 1025px;
-$layout-breakpoint-small: 768px;
-
-$padding--desktop: 20px 60px;
-$padding--mobile: 20px 20px;
+@import "../../utilities/variables.scss";
 
 .header {
   display: flex;
@@ -12,7 +8,6 @@ $padding--mobile: 20px 20px;
   padding: $padding--desktop;
 
   .logo {
-    padding: 10px;
     text-decoration: none;
     color: black;
     h1 {
@@ -36,10 +31,8 @@ $padding--mobile: 20px 20px;
     .headerLink {
       text-decoration: none;
       padding: 10px;
-
-      &:hover {
-        text-decoration: underline;
-      }
+      font-weight: 500;
+      user-select: none;
     }
   }
 
@@ -62,17 +55,15 @@ $padding--mobile: 20px 20px;
   }
 
   .burgerDropdown {
-    display: none;
     position: absolute;
     left: 0;
     right: 0;
     max-width: 100%;
     background: white;
     padding: $padding--mobile;
+    box-shadow: 0px 5px 6px rgba(92, 75, 75, 0.5);
+    background-color: $color__primary;
 
-    &.active {
-      display: block;
-    }
     .navbar {
       flex-direction: column;
       gap: 16px;
