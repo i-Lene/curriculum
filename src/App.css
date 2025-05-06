@@ -22,3 +22,9 @@ h2 {
 .extra-light {
   font-weight: 200;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

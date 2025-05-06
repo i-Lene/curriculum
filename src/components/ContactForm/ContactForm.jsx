@@ -16,9 +16,6 @@ function ContactForm() {
   const templateIdContact = import.meta.env.VITE_CONTACT__TEMPLATE;
   const userId = import.meta.env.VITE_EMAIL__KEY;
 
-
-  console.log(serviceId, templateIdAuto, templateIdContact, userId);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setSuccessMessage("");

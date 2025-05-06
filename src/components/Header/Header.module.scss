@@ -74,6 +74,7 @@
 
   .burgerDropdown {
     position: absolute;
+    z-index: 9;
     left: 0;
     right: 0;
     max-width: 100%;
