@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import meCartoon from "../../../public/images/mecartoon.svg";
+import meCartoon from "/images/mecartoon.svg";
 import classes from "./Homepage.module.scss";
 import { motion } from "motion/react";
 

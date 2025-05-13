@@ -87,10 +87,28 @@
   padding: 12px 20px;
   border-radius: 8px;
   border: 1px solid $color__secondary;
+  color: $color__secondary;
   width: fit-content;
   font-weight: 500;
 
   a {
+    color: $color__secondary;
     text-decoration: none;
+  }
+
+  &:hover {
+    a {
+      color: $color__primary;
+    }
+  }
+}
+
+@media only screen and (max-width: $layout-breakpoint-medium) {
+  .home {
+    flex-direction: column-reverse;
+  }
+
+  .home__about {
+    margin-top: 0;
   }
 }

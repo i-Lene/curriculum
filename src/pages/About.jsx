@@ -1,4 +1,6 @@
+import AboutPage from "../components/About/About";
+
 function About() {
-  return <h1>About</h1>;
+  return <AboutPage />;
 }
 export default About;
