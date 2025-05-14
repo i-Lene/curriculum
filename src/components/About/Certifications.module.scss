@@ -1,0 +1,20 @@
+@import "../../utilities/variables.scss";
+
+.certifications ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    user-select: none;
+  }
+}
+
+.certifications li {
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.certifications li:hover {
+  color: $color__secondary;
+}

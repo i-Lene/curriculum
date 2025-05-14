@@ -15,8 +15,17 @@ h6 {
 
 p,
 a,
-span {
+span,
+li {
   color: $color__text;
+}
+
+ul {
+  li {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
 }
 
 main {
@@ -57,10 +66,21 @@ button {
   font-weight: 500;
   width: fit-content;
   cursor: pointer;
+  user-select: none;
 
   &:hover {
     background-color: $color__primary;
     color: $color__secondary;
+
+    a,
+    span {
+      color: $color__secondary;
+    }
+  }
+
+  a,
+  span {
+    color: $color__primary;
   }
 
   &.secondary {
@@ -71,7 +91,22 @@ button {
     &:hover {
       background-color: $color__secondary;
       color: $color__primary;
+
+      a,
+      span {
+        color: $color__primary;
+      }
     }
+
+    a,
+    span {
+      color: $color__secondary;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 500;
   }
 }
 

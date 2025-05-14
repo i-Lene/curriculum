@@ -1,0 +1,21 @@
+.notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.notFoundImage {
+  width: 100%;
+  max-width: 600px;
+
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.notFoundText {
+  text-align: center;
+}

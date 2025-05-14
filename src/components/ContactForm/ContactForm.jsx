@@ -1,53 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import classes from "./Contacts.module.scss";
 import Modal from "../UI/Modal";
 import contactImage from "/images/contactImg.png";
-import { motion } from "motion/react";
+
 import {
   validateEmail,
   isValidPhoneNumber,
   isNotEmpty,
 } from "../../utilities/formValidation";
+import CustomButton from "../UI/CustomButton";
 
 function ContactForm() {
   const [formState, setFormState] = useState({ errors: {} });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkScreen = () => setIsMobile(window.innerWidth < 1025);
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
 
   const serviceId = import.meta.env.VITE_EMAIL__SERVICE__KEY;
   const templateIdAuto = import.meta.env.VITE_AUTO__TEMPLATE;
   const templateIdContact = import.meta.env.VITE_CONTACT__TEMPLATE;
   const userId = import.meta.env.VITE_EMAIL__KEY;
-
-  const whileHoverEffect = isMobile
-    ? {}
-    : {
-        scale: 1.05,
-        transition: {
-          duration: 0.3,
-          type: "spring",
-        },
-      };
-
-  const whileTapEffect = isMobile
-    ? {}
-    : {
-        scale: 0.95,
-        transition: {
-          duration: 0.3,
-          type: "spring",
-        },
-      };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -113,7 +86,20 @@ function ContactForm() {
 
   return (
     <>
-      {showModal && <Modal message={modalMessage} onClose={closeModal} />}
+      {showModal && (
+        <Modal onClose={closeModal}>
+          <div style={{ textAlign: "center", padding: "1rem" }}>
+            <p>{modalMessage}</p>
+            <CustomButton
+              onClick={closeModal}
+              className="secondary"
+              style={{ marginTop: "1rem" }}
+            >
+              Close
+            </CustomButton>
+          </div>
+        </Modal>
+      )}
 
       <form onSubmit={handleSubmit} className={classes.contactForm}>
         <fieldset className={classes.fieldset}>
@@ -158,15 +144,9 @@ function ContactForm() {
               )}
             </div>
             <div className={classes.actions}>
-              <motion.button
-                whileHover={whileHoverEffect}
-                whileTap={whileTapEffect}
-                className={classes.formBtn}
-                type="submit"
-                disabled={isSubmitting}
-              >
+              <CustomButton>
                 {isSubmitting ? "Sending..." : "Send Message"}
-              </motion.button>
+              </CustomButton>
             </div>
           </div>
         </fieldset>

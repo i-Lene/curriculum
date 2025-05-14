@@ -1,26 +1,9 @@
 import { Link } from "react-router";
 import meCartoon from "/images/mecartoon.svg";
 import classes from "./Homepage.module.scss";
-import { motion } from "motion/react";
+import CustomButton from "../UI/CustomButton";
 
 function Homepage() {
-  const whileHoverEffect = {
-    scale: 1.05,
-    backgroundColor: "#d4a5a5",
-    transition: {
-      duration: 0.3,
-      type: "spring",
-    },
-  };
-
-  const whileTapEffect = {
-    scale: 0.95,
-    transition: {
-      duration: 0.3,
-      type: "spring",
-    },
-  };
-
   return (
     <>
       <div className={classes.home}>
@@ -53,21 +36,13 @@ function Homepage() {
           </p>
         </div>
         <div className={classes.home__callToAction}>
-          <motion.div
-            whileHover={whileHoverEffect}
-            whileTap={whileTapEffect}
-            className={classes.home__callToAction__button}
-          >
+          <CustomButton>
             <Link to="/contact">Lets talk</Link>
-          </motion.div>
+          </CustomButton>
 
-          <motion.div
-            whileHover={whileHoverEffect}
-            whileTap={whileTapEffect}
-            className={classes.home__callToAction__button}
-          >
+          <CustomButton className="secondary">
             <Link to="/about">Get to know me</Link>
-          </motion.div>
+          </CustomButton>
         </div>
       </div>
     </>

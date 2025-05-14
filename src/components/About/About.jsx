@@ -1,4 +1,5 @@
 import classes from "./About.module.scss";
+import Certifications from "./Certifications";
 import Timeline from "./Timeline";
 
 function AboutPage() {
@@ -51,18 +52,7 @@ function AboutPage() {
       </section>
 
       <section className={classes.certifications}>
-        <h2>Officially Certified</h2>
-        <ul>
-          <li>React Complete Guide - Udemy</li>
-          <li>Adobe Certified Expert - Adobe Commerce Front End Developer</li>
-          <li>Adobe Certified Professional - Adobe Commerce Developer</li>
-          <li>The Complete 2022 Web Development Bootcamp – Udemy</li>
-          <li>OLX Women Workshops – OLX Group</li>
-        </ul>
-      </section>
-
-      <section className={classes.contact}>
-        <h2>Let’s Connect </h2>
+        <Certifications />
       </section>
     </div>
   );
