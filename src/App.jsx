@@ -5,6 +5,7 @@ import About from "./pages/About";
 import RootLayout from "./layout/RootLayout";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

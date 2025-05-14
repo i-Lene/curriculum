@@ -1,0 +1,46 @@
+@use "../../utilities/variables.scss" as vars;
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  flex-direction: row;
+  will-change: transform;
+  gap: 10px;
+}
+
+.embla__slide {
+  position: relative;
+
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  user-select: none;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__prev,
+.embla__next {
+}
+
+.embla__prev[disabled],
+.embla__next[disabled] {
+  opacity: 0.3;
+}
+
+.embla__prev {
+  left: 10px;
+}
+
+.embla__next {
+  right: 10px;
+}
