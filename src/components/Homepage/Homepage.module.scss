@@ -1,4 +1,4 @@
-@import "../../utilities/variables.scss";
+@use "../../utilities/variables" as vars;
 
 .home {
   display: flex;
@@ -33,7 +33,7 @@
     display: inline-block;
     width: 60px;
     height: 1px;
-    background-color: $color__text;
+    background-color: vars.$color__text;
   }
 }
 
@@ -45,7 +45,7 @@
   }
 
   &::before {
-    background-color: $color__secondary;
+    background-color: vars.$color__secondary;
     content: "";
     width: 500px;
     height: 500px;
@@ -82,7 +82,7 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: $layout-breakpoint-medium) {
+@media only screen and (max-width: vars.$layout-breakpoint-medium) {
   .home {
     flex-direction: column-reverse;
   }

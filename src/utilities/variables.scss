@@ -1,10 +1,10 @@
-$layout-breakpoint-medium: 1025px;
-$layout-breakpoint-small: 768px;
+$layout-breakpoint-medium: 1025px !default;
+$layout-breakpoint-small: 768px !default;
 
-$padding--desktop: 20px 60px;
-$padding--mobile: 20px 20px;
+$padding--desktop: 20px 60px !default;
+$padding--mobile: 20px 20px !default;
 
-$color__primary: #eeeee4;
-$color__secondary: #d4a5a5;
-$color__text: #5c4b4b;
-$error__text: #a11818;
+$color__primary: #eeeee4 !default;
+$color__secondary: #d4a5a5 !default;
+$color__text: #5c4b4b !default;
+$error__text: #a11818 !default;

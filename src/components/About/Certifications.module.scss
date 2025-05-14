@@ -1,4 +1,4 @@
-@import "../../utilities/variables.scss";
+@use "../../utilities/variables" as vars;
 
 .certifications ul {
   list-style: none;
@@ -16,5 +16,5 @@
 }
 
 .certifications li:hover {
-  color: $color__secondary;
+  color: vars.$color__secondary;
 }

@@ -1,14 +1,14 @@
-@import "../../utilities/variables.scss";
+@use "../../utilities/variables" as vars;
 
 .footer {
-  padding: $padding--desktop;
+  padding: vars.$padding--desktop;
   text-align: center;
   margin-top: auto;
   font-weight: 500;
 }
 
-@media only screen and (max-width: $layout-breakpoint-medium) {
+@media only screen and (max-width: vars.$layout-breakpoint-medium) {
   .footer {
-    padding: $padding--mobile;
+    padding: vars.$padding--mobile;
   }
 }
