@@ -3,27 +3,32 @@ import classes from "./Certifications.module.scss";
 import Modal from "../UI/Modal";
 import { motion } from "framer-motion";
 import CustomButton from "../UI/CustomButton";
+import reactGuide from "/certificates/react-guide.jpg";
+import adobeExpert from "/certificates/adobe-expert.png";
+import adobeProf from "/certificates/adobe-professional.png";
+import bootcamp from "/certificates/web-dev-bootcamp.jpg";
+import olx from "/certificates/olx-workshop.png";
 
 const certifications = [
   {
     title: "React Complete Guide - Udemy",
-    image: "/certificates/react-guide.jpg",
+    image: reactGuide,
   },
   {
     title: "Adobe Certified Expert - Adobe Commerce Front End Developer",
-    image: "/certificates/adobe-expert.png",
+    image: adobeExpert,
   },
   {
     title: "Adobe Certified Professional - Adobe Commerce Developer",
-    image: "/certificates/adobe-professional.png",
+    image: adobeProf,
   },
   {
     title: "The Complete 2022 Web Development Bootcamp – Udemy",
-    image: "/certificates/web-dev-bootcamp.jpg",
+    image: bootcamp,
   },
   {
     title: "OLX Women Workshops – OLX Group",
-    image: "/certificates/olx-workshop.png",
+    image: olx,
   },
 ];
 
