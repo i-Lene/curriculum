@@ -1,11 +1,16 @@
-<!-- public/404.html -->
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/curriculum/" />
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
     <script>
-      // fallback to client-side routing
-      location.replace("/curriculum" + location.pathname + location.search + location.hash);
+      (function () {
+        const currentPath = location.pathname;
+        if (!currentPath.startsWith("/curriculum")) {
+          const newUrl = "/curriculum" + currentPath + location.search + location.hash;
+          location.replace(newUrl);
+        }
+      })();
     </script>
   </head>
   <body>
