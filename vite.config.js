@@ -5,9 +5,11 @@ export default defineConfig({
   plugins: [react()],
   base: '/curriculum/',
   build: {
-    outDir: 'dist'
-  },
-  server: {
-    historyApiFallback: true
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+      }
+    }
   }
 });

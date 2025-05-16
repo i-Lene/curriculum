@@ -1,15 +1,14 @@
+<!-- public/404.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=/curriculum/" />
     <script>
-      window.location.replace("/curriculum/index.html");
+      // fallback to client-side routing
+      location.replace("/curriculum" + location.pathname + location.search + location.hash);
     </script>
   </head>
   <body>
-    <noscript>
-      JavaScript is required to view this page.
-    </noscript>
+    <p>Redirecting...</p>
   </body>
 </html>
