@@ -6,6 +6,13 @@
   justify-content: space-between;
   gap: 16px;
   padding: vars.$padding--desktop;
+  background-color: vars.$color__primary;
+  z-index: 20;
+
+  &.open {
+    position: sticky;
+    top: 0;
+  }
 
   .logo {
     text-decoration: none;
@@ -98,6 +105,16 @@
       }
     }
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 90px;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
 }
 
 @media only screen and (max-width: vars.$layout-breakpoint-medium) {

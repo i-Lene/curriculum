@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import meCartoon from "/images/mecartoon.svg";
 import classes from "./Homepage.module.scss";
 import CustomButton from "../UI/CustomButton";
+import { motion } from "motion/react";
 
 function Homepage() {
   return (

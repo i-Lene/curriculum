@@ -2,10 +2,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import HeaderLink from "./HeaderLink";
 import classes from "./Header.module.scss";
-import { motion } from "motion/react";
+import { motion } from "framer-motion"; // fixed incorrect import
 import { useEffect, useState } from "react";
 
-function HeaderLinks() {
+function HeaderLinks({ closeMenu }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -22,24 +22,25 @@ function HeaderLinks() {
   return (
     <nav className={classes.navbar}>
       <ul>
-        <HeaderLink path="/" name="Home" />
-        <HeaderLink path="/about" name="About" />
-        <HeaderLink path="/portfolio" name="Portfolio" />
-        <HeaderLink path="/contact" name="Contact" />
+        <HeaderLink path="/" name="Home" closeMenu={closeMenu} />
+        <HeaderLink path="/about" name="About" closeMenu={closeMenu} />
+        <HeaderLink path="/portfolio" name="Portfolio" closeMenu={closeMenu} />
+        <HeaderLink path="/contact" name="Contact" closeMenu={closeMenu} />
       </ul>
+
       <motion.div
         style={{ transformOrigin: "center" }}
         {...motionProps}
         className={classes.gitHubLink}
       >
-        <motion.a
-          style={{ transformOrigin: "center", color: "#5c4b4b" }}
-          {...motionProps}
+        <a
+          style={{ color: "#5c4b4b" }}
           href="https://github.com/i-Lene"
           target="_blank"
+          rel="noopener noreferrer"
         >
-          {<FontAwesomeIcon icon={faGithub} />}
-        </motion.a>
+          <FontAwesomeIcon icon={faGithub} />
+        </a>
       </motion.div>
     </nav>
   );

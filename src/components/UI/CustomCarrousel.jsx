@@ -17,18 +17,17 @@ function CustomCarrousel({ slides, slidesToShow = 3, slidesToScroll = 3 }) {
     };
 
     updateForDevice();
-    
+
     window.addEventListener("resize", updateForDevice);
     return () => window.removeEventListener("resize", updateForDevice);
   }, [slidesToShow, slidesToScroll]);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    slidesToScroll: currentSlidesToScroll
+    slidesToScroll: currentSlidesToScroll,
   });
 
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
-
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -46,24 +45,30 @@ function CustomCarrousel({ slides, slidesToShow = 3, slidesToScroll = 3 }) {
     emblaApi.on("reInit", onSelect);
   }, [emblaApi, onSelect]);
 
-  const slideWidth = `${Math.floor((100 / currentSlidesToShow))}%`;
+  const slideWidth = `${Math.floor(100 / currentSlidesToShow)}%`;
 
   return (
     <div className={classes.embla}>
-      <button
-        className={classes.embla__prev}
-        onClick={scrollPrev}
-        disabled={!canScrollPrev}
-      >
-        <FontAwesomeIcon icon={faLeftLong} />
-      </button>
-      <button
-        className={classes.embla__next}
-        onClick={scrollNext}
-        disabled={!canScrollNext}
-      >
-        <FontAwesomeIcon icon={faRightLong} />
-      </button>
+      <div className={classes.projHeader}>
+        <h2>Projects</h2>
+        <div className={classes.carrouselActions}>
+          <button
+            className={classes.embla__prev}
+            onClick={scrollPrev}
+            disabled={!canScrollPrev}
+          >
+            <FontAwesomeIcon icon={faLeftLong} />
+          </button>
+          <button
+            className={classes.embla__next}
+            onClick={scrollNext}
+            disabled={!canScrollNext}
+          >
+            <FontAwesomeIcon icon={faRightLong} />
+          </button>
+        </div>
+      </div>
+
       <div className={classes.embla__viewport} ref={emblaRef}>
         <div className={classes.embla__container}>
           {slides.map((text, index) => (

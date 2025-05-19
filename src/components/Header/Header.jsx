@@ -14,8 +14,13 @@ export default function Header() {
     setIsDropdownOpen((prev) => !prev);
   }
 
+  function closeMenu() {
+    setIsDropdownOpen(false);
+  }
+
   return (
-    <header className={classes.header}>
+    <header className={`${classes.header} ${isDropdownOpen ? classes.open : ""}`}>
+      {" "}
       <Link className={classes.logo} to={"/"}>
         <h1>Marlene.</h1>
       </Link>
@@ -24,6 +29,10 @@ export default function Header() {
       </div>
       <div className={classes.headerLinksMobile}>
         <div className={classes.burger}>
+          {isDropdownOpen && (
+            <div className={classes.overlay} onClick={closeMenu} />
+          )}
+
           <motion.button
             className={classes.burgerIcon}
             onClick={toggleBurgerMenu}
@@ -64,7 +73,7 @@ export default function Header() {
             }
             transition={{ duration: 0.3 }}
           >
-            <HeaderLinks />
+            <HeaderLinks closeMenu={closeMenu} />
           </motion.div>
         </div>
       </div>

@@ -6,6 +6,10 @@
 
   li {
     user-select: none;
+
+    span {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -17,4 +21,10 @@
 
 .certifications li:hover {
   color: vars.$color__secondary;
+}
+
+
+
+.certificationsModal {
+  max-width: 60%;
 }

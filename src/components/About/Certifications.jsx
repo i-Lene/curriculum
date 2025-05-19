@@ -58,13 +58,13 @@ export default function Certifications() {
             whileHover={isMobile ? {} : { scale: 1.02 }}
             whileTap={isMobile ? {} : { scale: 0.98 }}
           >
-            🔍 {cert.title}
+            🔍 <span>{cert.title}</span>
           </motion.li>
         ))}
       </ul>
 
       {selectedCert && (
-        <Modal onClose={() => setSelectedCert(null)}>
+        <Modal classes={classes.certificationsModal} onClose={() => setSelectedCert(null)}>
           <div style={{ textAlign: "center" }}>
             <img
               src={selectedCert.image}

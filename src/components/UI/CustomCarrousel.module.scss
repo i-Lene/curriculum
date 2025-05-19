@@ -32,12 +32,16 @@
   width: 100%;
 }
 
+.carrouselActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
 .embla__prev,
 .embla__next {
-  position: absolute;
-  top: 42%;
   z-index: 1;
-  translate: 0 -42%;
   padding: 15px;
 }
 
@@ -54,9 +58,22 @@
   right: 0;
 }
 
+.projHeader {
+  margin-bottom: 16px;
+
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    margin: 0;
+  }
+}
+
 @media only screen and (max-width: vars.$layout-breakpoint-small) {
   .embla__prev,
   .embla__next {
-    display: none;
+    padding: 10px;
   }
 }
