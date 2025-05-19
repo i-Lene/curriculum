@@ -6,6 +6,8 @@
 
   li {
     user-select: none;
+    display: flex;
+    gap: 4px;
 
     span {
       text-decoration: underline;
@@ -23,8 +25,6 @@
   color: vars.$color__secondary;
 }
 
-
-
 .certificationsModal {
-  max-width: 60%;
+  max-width: 800px !important;
 }
