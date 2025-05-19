@@ -5,6 +5,7 @@ import lusoracks from "/projects/lusoracks.png";
 import mstore from "/projects/mstore.png";
 import navigator from "/projects/navigator.png";
 import tmc from "/projects/tmc.png";
+import eternal from "/projects/eternal.png";
 import Project from "./Project";
 
 const SLIDES = [
@@ -28,6 +29,11 @@ const SLIDES = [
     img={tmc}
     title="TMC"
     link={"https://tropicalmarinecentre.com/ib/"}
+  />,
+  <Project
+    img={eternal}
+    title="Eternal & Modern"
+    link={"https://www.eternalandmodern.com/"}
   />,
 ];
 
