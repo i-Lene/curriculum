@@ -5,6 +5,12 @@ import CustomButton from "../UI/CustomButton";
 import { motion } from "motion/react";
 
 function Homepage() {
+  function handleClick(e) {
+    const button = e.currentTarget;
+    const link = button.querySelector(".linkButton");
+    link.click();
+  }
+
   return (
     <>
       <div className={classes.home}>
@@ -37,12 +43,16 @@ function Homepage() {
           </p>
         </div>
         <div className={classes.home__callToAction}>
-          <CustomButton>
-            <Link to="/contact">Lets talk</Link>
+          <CustomButton onClick={handleClick} className="btnLink">
+            <Link className="linkButton" to="/contact">
+              Lets talk
+            </Link>
           </CustomButton>
 
-          <CustomButton className="secondary">
-            <Link to="/about">Get to know me</Link>
+          <CustomButton onClick={handleClick} className="secondary">
+            <Link className="linkButton" to="/about">
+              Get to know me
+            </Link>
           </CustomButton>
         </div>
       </div>
