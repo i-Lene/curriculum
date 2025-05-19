@@ -6,12 +6,12 @@
   justify-content: space-between;
   gap: 16px;
   padding: vars.$padding--desktop;
+  position: sticky;
+  top: 0;
   background-color: vars.$color__primary;
   z-index: 20;
 
   &.open {
-    position: sticky;
-    top: 0;
   }
 
   .logo {
